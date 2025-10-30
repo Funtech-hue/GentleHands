@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Gentle Hands</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="logo">Gentle Hands</div>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html" class="active">Book</a></li>
+            </ul>
+        </nav>
+        <div class="drawer-toggle" id="drawerToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+    <div class="drawer-header">
+        <span class="close-drawer" id="closeDrawer">×</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="book.html" class="active">Book</a></li>
+    </ul>
+</div>
+
+<!-- HERO BANNER -->
+<section style="background: linear-gradient(rgba(0,109,119,0.95), rgba(0,109,119,0.95)), url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover; color: white; padding: 120px 20px; text-align: center; margin-top: 70px;">
+    <div class="container">
+        <h1 style="font-size: 3rem; margin-bottom: 1rem; color: white;">Book Your Session</h1>
+        <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto; opacity: 0.95;">
+            Secure your spot with 50% upfront payment. Fill the form below or message on WhatsApp.
+        </p>
+    </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section style="padding: 100px 20px; background: #f9fbfc;">
+    <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); position: relative;">
+            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem;">Appointment Request</h2>
+
+            <!-- SUCCESS MESSAGE (hidden by default) -->
+            <div id="successMessage" style="display: none; text-align: center; padding: 2rem; background: #e6f7f0; border-radius: 16px; margin-bottom: 1.5rem; border: 2px solid #25D366;">
+                <i class="fas fa-check-circle" style="color: #25D366; font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3 style="color: #006d77; margin: 0.5rem 0;">Thank You!</h3>
+                <p style="color: #444; font-size: 1rem; margin: 0;">
+                    Your booking request has been sent. We'll reply within 1 hour with payment details.
+                </p>
+            </div>
+
+            <!-- FORM -->
+            <form id="bookingForm" action="https://formspree.io/f/xkgpvezy" method="POST" style="display: grid; gap: 1.2rem;">
+                <input type="text" name="name" placeholder="Full Name" required 
+                       style="padding: 1rem; border: 1.5px solid #ddd; border-radius: 12px; font-size: 1rem;">
+
+                <input type="tel" name="phone" placeholder="Phone Number" required 
+                       style="padding: 1rem; border: 1.5px solid #ddd; border-radius: 12px; font-size: 1rem;">
+
+                <input type="email" name="email" placeholder="Email Address" required 
+                       style="padding: 1rem; border: 1.5px solid #ddd; border-radius: 12px; font-size: 1rem;">
+
+                <select name="session" required 
+                        style="padding: 1rem; border: 1.5px solid #ddd; border-radius: 12px; font-size: 1rem;">
+                    <option value="">Select Session</option>
+                    <option value="2hr">2-Hour Full Body – $300 ($150 upfront)</option>
+                    <option value="1hr">1-Hour Targeted – $200 ($100 upfront)</option>
+                    <option value="overnight">Overnight Experience – $500 ($250 upfront)</option>
+                </select>
+
+                <input type="date" name="date" required 
+                       style="padding: 1rem; border: 1.5px solid #ddd; border-radius: 12px; font-size: 1rem;">
+
+                <input type="time" name="time" required 
+                       style="padding: 1rem; border: 1.5px solid #ddd; border-radius: 12px; font-size: 1rem;">
+
+                <textarea name="notes" placeholder="Special requests (optional)" rows="4" 
+                          style="padding: 1rem; border: 1.5px solid #ddd; border-radius: 12px; font-size: 1rem; resize: vertical;"></textarea>
+
+                <button type="submit" 
+                        style="padding: 1rem; background: #e09f3e; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: 0.3s;">
+                    Send Booking Request
+                </button>
+            </form>
+
+            <p id="formNote" style="text-align: center; margin-top: 1.5rem; font-size: 0.95rem; color: #666;">
+                You’ll receive a confirmation via email with payment instructions (Cash App, Zelle, PayPal).
+            </p>
+        </div>
+
+        <!-- WHATSAPP ALTERNATIVE -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="font-size: 1.1rem; color: #444; margin-bottom: 1rem;">
+                Prefer instant booking?
+            </p>
+            <a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
+               class="order-btn" target="_blank" 
+               style="background: #25D366; padding: 1rem 2.5rem; font-size: 1.1rem;">
+                Book via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT INFO -->
+<section style="padding: 80px 20px; background: white;">
+    <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; padding: 2rem; background: #f0f9f9; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center;">
+            <h3 style="color: #006d77; margin-bottom: 1.5rem; font-size: 1.8rem;">Need Help?</h3>
+            <p style="margin: 1rem 0; font-size: 1.1rem;">
+                <i class="fas fa-phone" style="color: #006d77;"></i> 
+                <strong>Call/Text:</strong> +1 (703) 996-9443
+            </p>
+            <p style="margin: 1rem 0; font-size: 1.1rem;">
+                <i class="fas fa-envelope" style="color: #006d77;"></i> 
+                <strong>Email:</strong> taniahotmom9@gmail.com
+            </p>
+            <p style="margin: 1rem 0; font-size: 1.1rem;">
+                <i class="fas fa-map-marker-alt" style="color: #006d77;"></i> 
+                <strong>Location:</strong> 605 N Osage Ave, Dewey, OK 74029
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>Gentle Hands</h4>
+            <p>Professional massage therapy in Dewey, OK.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> +1 (703) 996-9443</p>
+            <p><i class="fas fa-envelope"></i> taniahotmom9@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> 605 N Osage Ave, Dewey, OK 74029</p>
+        </div>
+        <div class="footer-col">
+            <h4>Message Me</h4>
+            <a href="https://wa.me/17039969443" class="whatsapp-link" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Gentle Hands. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
+   class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    // Drawer
+    const drawer = document.getElementById('drawer');
+    const drawerToggle = document.getElementById('drawerToggle');
+    const closeDrawer = document.getElementById('closeDrawer');
+    drawerToggle.addEventListener('click', () => drawer.classList.toggle('open'));
+    closeDrawer.addEventListener('click', () => drawer.classList.remove('open'));
+    document.addEventListener('click', e => {
+        if (!drawer.contains(e.target) && !drawerToggle.contains(e.target)) {
+            drawer.classList.remove('open');
+        }
+    });
+
+    // Form Submission with Success Message
+    const form = document.getElementById('bookingForm');
+    const successMessage = document.getElementById('successMessage');
+    const formNote = document.getElementById('formNote');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent page reload
+
+        // Optional: Add loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        // Submit to Formspree
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success
+                form.style.display = 'none';
+                formNote.style.display = 'none';
+                successMessage.style.display = 'block';
+            } else {
+                alert('Oops! There was a problem. Please try WhatsApp.');
+            }
+        })
+        .catch(() => {
+            alert('Connection error. Please try again or use WhatsApp.');
+        })
+        .finally(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+    });
+</script>
+
+</body>
+</html>

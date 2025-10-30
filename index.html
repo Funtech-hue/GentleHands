@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gentle Hands | Massage Therapy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="logo">Gentle Hands</div>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+            </ul>
+        </nav>
+        <div class="drawer-toggle" id="drawerToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+    <div class="drawer-header">
+        <span class="close-drawer" id="closeDrawer">×</span>
+    </div>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="book.html">Book</a></li>
+    </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero-slider">
+    <div class="slides">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Massage">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1639162906614-0603b0ae95fd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" alt="Relaxation">
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="animate-text">Welcome to <span>Gentle Hands</span></h1>
+        <p class="animate-text delay-1">Professional Massage Therapy in Dewey, OK</p>
+        <a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
+           class="cta animate-text delay-2" target="_blank">Book via WhatsApp</a>
+    </div>
+    <div class="slider-dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+    </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why-choose">
+    <div class="container">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="cards-container">
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-clock"></i></div>
+                <h3>Instant Booking</h3>
+                <p>Message on WhatsApp and book in seconds. Fast, easy, no forms.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Licensed & Trusted</h3>
+                <p>Certified therapist with 5+ years of experience in therapeutic massage.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-rates">
+    <div class="container">
+        <h2 class="section-title">Our Services & Rates</h2>
+        <p class="intro-text">
+            Upfront payment required to confirm booking. Pay balance at session end.
+        </p>
+        <div class="rates-grid">
+            <div class="rate-card">
+                <img src="https://plus.unsplash.com/premium_photo-1661404037948-20b44f2c45c6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI0fHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=600" alt="2 Hour">
+                <div class="rate-info">
+                    <h3>2-Hour Session</h3>
+                    <p class="price">Total: <strong>$300</strong></p>
+                    <p class="upfront">Upfront: <strong>$150</strong></p>
+                    <a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20a%202-Hour%20Session%20(%24300)" 
+                       class="order-btn" target="_blank">Book Now</a>
+                </div>
+            </div>
+            <div class="rate-card">
+                <img src="https://plus.unsplash.com/premium_photo-1683133769793-c2f9cf1a09af?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ0fHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=600" alt="1 Hour">
+                <div class="rate-info">
+                    <h3>1-Hour Session</h3>
+                    <p class="price">Total: <strong>$200</strong></p>
+                    <p class="upfront">Upfront: <strong>$100</strong></p>
+                    <a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20a%201-Hour%20Session%20(%24200)" 
+                       class="order-btn" target="_blank">Book Now</a>
+                </div>
+            </div>
+            <div class="rate-card">
+                <img src="https://plus.unsplash.com/premium_photo-1723791603472-05e9808e6ddd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExNnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=600" alt="Overnight">
+                <div class="rate-info">
+                    <h3>Overnight Session</h3>
+                    <p class="price">Total: <strong>$500</strong></p>
+                    <p class="upfront">Upfront: <strong>$250</strong></p>
+                    <a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20an%20Overnight%20Session%20(%24500)" 
+                       class="order-btn" target="_blank">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQs -->
+<section class="faqs-section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <details>
+                <summary>How do I book?</summary>
+                <p>Tap any "Book Now" button or message +1 (703) 996-9443 on WhatsApp.</p>
+            </details>
+            <details>
+                <summary>Is upfront payment required?</summary>
+                <p>Yes, 50% secures your spot. Pay the rest after your session.</p>
+            </details>
+            <details>
+                <summary>Where are you located?</summary>
+                <p>605 N Osage Ave, Dewey, OK 74029. Outcall available.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner">
+    <h3>Ready to Relax?</h3>
+    <p>Message me now on WhatsApp to book your session today.</p>
+    <a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
+       class="banner-btn" target="_blank">Chat on WhatsApp</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>Gentle Hands</h4>
+            <p>Professional massage therapy in Dewey, OK.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html">Book</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> +1 (703) 996-9443</p>
+            <p><i class="fas fa-envelope"></i> taniahotmom9@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> 605 N Osage Ave, Dewey, OK 74029</p>
+        </div>
+        <div class="footer-col">
+            <h4>Message Me</h4>
+            <a href="https://wa.me/17039969443" class="whatsapp-link" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Gentle Hands. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
+   class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    // Drawer
+    const drawer = document.getElementById('drawer');
+    const drawerToggle = document.getElementById('drawerToggle');
+    const closeDrawer = document.getElementById('closeDrawer');
+    drawerToggle.addEventListener('click', () => drawer.classList.toggle('open'));
+    closeDrawer.addEventListener('click', () => drawer.classList.remove('open'));
+    document.addEventListener('click', e => {
+        if (!drawer.contains(e.target) && !drawerToggle.contains(e.target)) {
+            drawer.classList.remove('open');
+        }
+    });
+
+    // Slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    function showSlide(n) {
+        slides.forEach((s,i) => {
+            s.classList.remove('active');
+            dots[i].classList.remove('active');
+            if (i === n) {
+                s.classList.add('active');
+                dots[i].classList.add('active');
+            }
+        });
+    }
+    function currentSlide(n) { slideIndex = n; showSlide(n); }
+    setInterval(() => {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlide(slideIndex);
+    }, 5000);
+    showSlide(0);
+</script>
+
+</body>
+</html>
