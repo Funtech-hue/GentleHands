@@ -33,6 +33,14 @@
             border-radius: 12px;
             font-size: 1rem;
             font-family: 'Roboto', sans-serif;
+            transition: border 0.3s;
+        }
+
+        .booking-form input:focus,
+        .booking-form select:focus,
+        .booking-form textarea:focus {
+            border-color: #e09f3e;
+            outline: none;
         }
 
         .booking-form textarea {
@@ -80,6 +88,7 @@
             border-radius: 16px;
             border: 2px solid #25D366;
             margin-bottom: 1.5rem;
+            animation: fadeIn 0.5s ease;
         }
 
         .success-message i {
@@ -93,6 +102,22 @@
             margin-top: 1rem;
             font-size: 0.9rem;
             color: #666;
+        }
+
+        /* Dynamic Address Field */
+        #addressField {
+            display: none;
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Mobile Adjustments */
@@ -193,15 +218,30 @@
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="tel" name="phone" placeholder="Phone Number" required>
                 <input type="email" name="email" placeholder="Email Address" required>
+
+                <!-- INCALL / OUTCALL -->
+                <select name="location" id="locationSelect" required>
+                    <option value="">Select Location Type</option>
+                    <option value="incall">Incall (I visit you at studio)</option>
+                    <option value="outcall">Outcall (You come to me)</option>
+                </select>
+
+                <!-- ADDRESS FIELD (HIDDEN UNTIL OUTCALL) -->
+                <div id="addressField">
+                    <input type="text" name="address" placeholder="Your Full Address (for Outcall)" id="addressInput">
+                </div>
+
                 <select name="session" required>
                     <option value="">Select Session</option>
                     <option value="2hr">2-Hour Full Body – $300 ($150 upfront)</option>
                     <option value="1hr">1-Hour Targeted – $200 ($100 upfront)</option>
                     <option value="overnight">Overnight – $500 ($250 upfront)</option>
                 </select>
+
                 <input type="date" name="date" required>
                 <input type="time" name="time" required>
                 <textarea name="notes" placeholder="Special requests (optional)"></textarea>
+
                 <button type="submit" class="submit-btn">
                     Send Booking Request
                 </button>
@@ -213,7 +253,7 @@
         </div>
 
         <!-- WHATSAPP -->
-        <a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
+        <a href="https://wa.me/16395247250?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
            class="whatsapp-alt" target="_blank">
             Book via WhatsApp
         </a>
@@ -225,9 +265,9 @@
     <div class="container">
         <div style="max-width: 800px; margin: 0 auto; padding: 1.8rem; background: #f0f9f9; border-radius: 16px; text-align: center; font-size: 1rem;">
             <h3 style="color: #006d77; margin-bottom: 1.2rem; font-size: 1.6rem;">Need Help?</h3>
-            <p style="margin: 0.8rem 0;"><i class="fas fa-phone" style="color: #006d77;"></i> <strong>+1 (703) 996-9443</strong></p>
+            <p style="margin: 0.8rem 0;"><i class="fas fa-phone" style="color: #006d77;"></i> <strong>+1 (639) 524-7250</strong></p>
             <p style="margin: 0.8rem 0;"><i class="fas fa-envelope" style="color: #006d77;"></i> taniahotmom9@gmail.com</p>
-            <p style="margin: 0.8rem 0;"><i class="fas fa-map-marker-alt" style="color: #006d77;"></i> 605 N Osage Ave, Dewey, OK</p>
+            <p style="margin: 0.8rem 0;"><i class="fas fa-map-marker-alt" style="color: #006d77;"></i> United States</p>
         </div>
     </div>
 </section>
@@ -237,7 +277,7 @@
     <div class="footer-container">
         <div class="footer-col">
             <h4>Gentle Hands</h4>
-            <p>Professional massage in Dewey, OK.</p>
+            <p>Professional massage therapy in United States.</p>
         </div>
         <div class="footer-col">
             <h4>Quick Links</h4>
@@ -250,13 +290,13 @@
         </div>
         <div class="footer-col">
             <h4>Contact</h4>
-            <p><i class="fas fa-phone"></i> +1 (703) 996-9443</p>
+            <p><i class="fas fa-phone"></i> +1 (639) 524-7250</p>
             <p><i class="fas fa-envelope"></i> taniahotmom9@gmail.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> 605 N Osage Ave, Dewey, OK 74029</p>
+            <p><i class="fas fa-map-marker-alt"></i> United States</p>
         </div>
         <div class="footer-col">
             <h4>Message Me</h4>
-            <a href="https://wa.me/17039969443" class="whatsapp-link" target="_blank">
+            <a href="https://wa.me/16395247250" class="whatsapp-link" target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
@@ -267,7 +307,7 @@
 </footer>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/17039969443?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
+<a href="https://wa.me/16395247250?text=Hi!%20I'd%20like%20to%20book%20a%20session." 
    class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
@@ -282,6 +322,22 @@
     document.addEventListener('click', e => {
         if (!drawer.contains(e.target) && !drawerToggle.contains(e.target)) {
             drawer.classList.remove('open');
+        }
+    });
+
+    // Dynamic Address Field
+    const locationSelect = document.getElementById('locationSelect');
+    const addressField = document.getElementById('addressField');
+    const addressInput = document.getElementById('addressInput');
+
+    locationSelect.addEventListener('change', function() {
+        if (this.value === 'outcall') {
+            addressField.style.display = 'block';
+            addressInput.required = true;
+        } else {
+            addressField.style.display = 'none';
+            addressInput.required = false;
+            addressInput.value = '';
         }
     });
 
