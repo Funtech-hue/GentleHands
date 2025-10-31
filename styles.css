@@ -716,3 +716,56 @@ section {
 .faq-list details:nth-child(3)[open] p strong:last-of-type::before {
     content: "Car";
 }
+
+/* SERVICE BADGES – INCALL / OUTCALL */
+.service-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto 3rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.badge.incall {
+    background: linear-gradient(135deg, #006d77, #008c99);
+}
+
+.badge.outcall {
+    background: linear-gradient(135deg, #e09f3e, #f4b869);
+}
+
+.badge i {
+    font-size: 1.1rem;
+}
+
+/* Mobile Fix – Force display */
+@media (max-width: 480px) {
+    .service-badges {
+        gap: 1rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        min-width: 140px;
+    }
+}
